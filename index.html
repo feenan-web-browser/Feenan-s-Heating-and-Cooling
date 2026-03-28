@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feenan's Heating & Cooling | HVAC Service Fairfield County CT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-blue: #004a99; /* Professional Arctic Blue */
+      --accent-orange: #e65100; /* Safety Orange for Heat/Emergency */
+      --dark-slate: #2c3e50;
+      --bg-light: #f9fbfb;
+      --white: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--dark-slate); background: var(--white); }
+    h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* Top Bar */
+    .top-bar {
+      background: var(--dark-slate);
+      color: white;
+      padding: 8px 5%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--white);
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    }
+    .logo { font-size: 1.6rem; font-weight: 700; color: var(--primary-blue); display: flex; align-items: center; gap: 8px; }
+    .logo span { color: var(--accent-orange); }
+    .nav-links a { text-decoration: none; color: var(--dark-slate); margin-left: 25px; font-weight: 600; font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--primary-blue); }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=2069');
+      background-size: cover;
+      background-position: center;
+      height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--white);
+      padding: 0 20px;
+    }
+    .hero h1 { font-size: 4rem; margin-bottom: 1rem; line-height: 1.1; }
+    .hero p { font-size: 1.4rem; max-width: 700px; margin-bottom: 2.5rem; font-weight: 400; opacity: 0.95; }
+    
+    .btn-group { display: flex; gap: 20px; }
+    .btn {
+      padding: 18px 35px;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 5px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+    .btn-emergency { background: var(--accent-orange); color: var(--white); box-shadow: 0 4px 15px rgba(230,81,0,0.4); }
+    .btn-outline { border: 2px solid var(--white); color: var(--white); }
+    .btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+    /* Highlights Section */
+    .highlights {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      padding: 40px 5%;
+      background: var(--bg-light);
+      border-bottom: 1px solid #eee;
+    }
+    .high-item { text-align: center; }
+    .high-item strong { display: block; font-size: 1.2rem; color: var(--primary-blue); }
+
+    /* Services */
+    .services { padding: 100px 5%; text-align: center; }
+    .section-head { margin-bottom: 60px; }
+    .section-head h2 { font-size: 2.8rem; color: var(--dark-slate); margin-bottom: 10px; }
+    .section-head div { width: 60px; height: 4px; background: var(--accent-orange); margin: 0 auto; }
+    
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      padding: 50px 30px;
+      background: var(--white);
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      transition: 0.4s;
+      text-align: left;
+    }
+    .card:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: var(--primary-blue); }
+    .card h3 { margin-bottom: 15px; color: var(--primary-blue); font-size: 1.5rem; }
+    .card p { color: #555; margin-bottom: 20px; font-size: 1rem; }
+    .card ul { list-style: none; padding-left: 0; }
+    .card ul li { margin-bottom: 8px; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+    .card ul li::before { content: "✓"; color: var(--accent-orange); }
+
+    /* CTA Section */
+    .contact-cta {
+      background: var(--primary-blue);
+      color: white;
+      padding: 80px 5%;
+      text-align: center;
+    }
+    .contact-cta h2 { font-size: 2.5rem; margin-bottom: 20px; }
+    .phone-big { font-size: 3rem; font-weight: 700; color: var(--white); text-decoration: none; display: block; margin-top: 10px; }
+
+    /* Footer */
+    footer { background: #1a1a1a; color: #bbb; padding: 70px 5% 30px; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 50px;
+      padding-bottom: 50px;
+    }
+    .footer-col h4 { color: white; margin-bottom: 25px; font-size: 1.2rem; }
+    .footer-col p { margin-bottom: 12px; }
+    .license-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border: 1px solid #444;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      margin-top: 10px;
+    }
+    .footer-bottom { text-align: center; border-top: 1px solid #333; padding-top: 30px; font-size: 0.85rem; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.8rem; }
+      .btn-group { flex-direction: column; width: 100%; }
+      .top-bar { display: none; }
+      .highlights { flex-direction: column; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <span>📍 SERVING ALL OF FAIRFIELD COUNTY, CT</span>
+    <span>🕒 24/7 EMERGENCY SERVICE AVAILABLE</span>
+  </div>
+
+  <nav>
+    <div class="logo">FEENAN'S <span>HVAC</span></div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:2035550123" style="color: var(--primary-blue); font-weight: 800;">(203) 555-0123</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Fairfield County's HVAC Experts</h1>
+    <p>Professional Heating, Cooling, & Air Quality Solutions. Fast Response for Danbury, Stamford, & Beyond.</p>
+    <div class="btn-group">
+      <a href="tel:2035550123" class="btn btn-emergency">Emergency Repair</a>
+      <a href="#services" class="btn btn-outline">Our Services</a>
+    </div>
+  </header>
+
+  <section class="highlights">
+    <div class="high-item"><strong>Fully Licensed</strong>CT License #S1-000000</div>
+    <div class="high-item"><strong>Rapid Response</strong>Fairfield County Local</div>
+    <div class="high-item"><strong>Expert Team</strong>Certified Technicians</div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="section-head">
+      <h2>Reliable HVAC Solutions</h2>
+      <div></div>
+    </div>
+    <div class="service-grid">
+      <div class="card">
+        <h3>Heating</h3>
+        <p>Keep your home safe and warm through the Connecticut winter with expert furnace and boiler care.</p>
+        <ul>
+          <li>Furnace Repair & Install</li>
+          <li>Boiler Maintenance</li>
+          <li>Heat Pump Systems</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Cooling</h3>
+        <p>High-efficiency AC solutions designed to handle Fairfield County's most humid summer days.</p>
+        <ul>
+          <li>Central Air Repair</li>
+          <li>Ductless Mini-Splits</li>
+          <li>AC Tune-Ups</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Air Quality</h3>
+        <p>Breathe easier with advanced filtration and humidity control for your entire home.</p>
+        <ul>
+          <li>Humidifiers/Dehumidifiers</li>
+          <li>UV Air Purifiers</li>
+          <li>Duct Inspection</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact-cta">
+    <h2>System Failure? We're On The Way.</h2>
+    <p>Speak with a local HVAC technician now:</p>
+    <a href="tel:2035550123" class="phone-big">(203) 555-0123</a>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Feenan's HVAC</h4>
+        <p>Locally owned and operated heating and cooling experts serving Fairfield County, CT.</p>
+        <div class="license-badge">CT Lic. #S1-XXXXXX</div>
+      </div>
+      <div class="footer-col">
+        <h4>Service Area</h4>
+        <p>• Danbury & Bethel</p>
+        <p>• Stamford & Norwalk</p>
+        <p>• Ridgefield & Wilton</p>
+        <p>• Greenwich & Darien</p>
+      </div>
+      <div class="footer-col">
+        <h4>Our Hours</h4>
+        <p>Mon-Fri: 7:30am - 5:30pm</p>
+        <p>Sat: 8:00am - 12:00pm</p>
+        <p style="color: var(--accent-orange); font-weight: 700;">24/7 Emergency Service</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Feenan's Heating & Cooling LLC. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
